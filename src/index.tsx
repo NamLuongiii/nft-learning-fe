@@ -2,13 +2,25 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.scss'
 import AppRouter from './AppRouter'
+import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql } from '@apollo/client'
+
+const client = new ApolloClient({
+  uri: process.env.REACT_APP_PUBLIC_URI,
+  cache: new InMemoryCache(),
+})
 
 // You need bootstrap? $ yarn add bootstrap
 // See: https://create-react-app.dev/docs/adding-bootstrap
 // import 'bootstrap/dist/css/bootstrap.css';
 
 // Single-page application (SPA)
-ReactDOM.render(<AppRouter />, document.getElementById('root'))
+
+ReactDOM.render(
+  <ApolloProvider client={client}>
+    <AppRouter />
+  </ApolloProvider>,
+  document.getElementById('root')
+)
 
 // If you want to Pre-render with react-snap
 // Step 1: install $ yarn add --dev react-snap

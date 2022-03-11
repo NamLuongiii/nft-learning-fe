@@ -14,25 +14,52 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  // background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  // color: white;
+}
+
+.set-data-to-contract {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.d-flex { display: flex; }
+.flex-direction-column { flex-direction: column; }
+.flex-direction-row { flex-direction: row; }
+.align-center { align-items: center; }
+.justify-center { justify-content: center; }
+
+
+.button-loading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-loading-second-ele {
+  position: absolute;
+}
+
+.events {
+  position: fixed;
+  width: 20vw;
+  height: 70vh;
+  top: 5vh;
+  right: 5vw;
+  background-color: #282c34;
   color: white;
+  font-size: 1rem;
+  overflow: auto;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.contract-address {
+  color: red;
+  font-size: 10px;
 }
